@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bone Classification</title>
+
+    <!-- Add CSS styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://www.physioline.in/wp-content/uploads/2018/01/Ankylosing-Spondylitis.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header {
+            background-color: rgb(40, 112, 235);
+            padding: auto;
+            padding-left: 25px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-right: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: left;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: rgb(98, 112, 107);
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+        .form {
+            position: relative;
+            z-index: 1;
+            opacity: 0.6;
+            background: #ffeba8;
+            max-width: 360px;
+            margin: 0 auto 90px;
+            padding: 45px;
+        }
+        .form input {
+            font-family: 'Times New Roman', Times, serif;
+            outline: 1;
+            background: #1d1c1c;
+            width: 90%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .submit {
+            font-size: 150px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: rgb(1, 1, 1);
+        }
+        .footer {
+            bottom: 0;
+            background-color: rgb(40, 112, 235);
+            padding: auto;
+            padding-left: 20px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-right: 50px;
+            text-align: center;
+        }
+        .output-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .butt{
+            text-align: center;
+        }
+
+        .butt a button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: rgb(0, 145, 255);
+
+        }
+
+        .butt a button:hover{
+            background-color: orange;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <h1>Health Care</h1>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <h2 style="font-size: x-large; text-align: center; color:#fff;">Prediction of Ankylosing Spondylitis</h2>
+        <div class="container">
+            <section>
+                <h1 style="color: white; text-align: center; font-weight: 1000;">Ankylosing Spondylitis</h1>
+            </section>
+            <h1>Upload a Report</h1>
+            <form action="/classify" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit" value="Classify">
+            </form>
+            <br><br><br>
+            <div class="output-box">
+                {% if pred %}
+                    <h1 style="color: rgb(7, 255, 115); text-align: center;">{{ pred }}</h1>
+                    <img src="{{ img_path }}" alt="Uploaded Image" width="300">
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <div class="butt">
+        <a href="https://asaraadvaith.github.io/Disease-Calculator/"><button>Disease Calculator</button></a>
+    </div>
+    <div class="butt">
+        <a href="https://asaraadvaith.github.io/Disease-Risk-Calculator/"><button>Disease Risk Calculator</button></a>
+    </div>
+    <div>
+        <p style="text-align: center; font-weight:600; color:#fff;">If you are Affected by Ankylosing Spondylitis click below Botton for Detail Information.</p>
+      </div>
+    <div class="butt">
+        <a href="https://asaraadvaith.github.io/Ankylosing-Spondylitis/"><button>Click here</button></a>
+    </div>
+    <br><br>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <h3>Health Care</h3>
+    </footer>
+</body>
+</html>
+
+
+
+
